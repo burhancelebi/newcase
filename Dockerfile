@@ -4,6 +4,8 @@ WORKDIR /var/www/html
 
 COPY . /var/www/html
 
+RUN cp .env.example .env
+
 ######## Composer.phar ########
 RUN curl -s https://getcomposer.org/installer | php \
   # move composer into a bin directory you control:
