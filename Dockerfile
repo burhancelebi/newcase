@@ -4,8 +4,6 @@ WORKDIR /var/www/html
 
 COPY . /var/www/html
 
-RUN cp .env.example .env
-
 ######## Composer.phar ########
 RUN curl -s https://getcomposer.org/installer | php \
   # move composer into a bin directory you control:
@@ -36,10 +34,18 @@ apt-get install -y libfreetype6-dev libjpeg62-turbo-dev libpng-dev && \
 docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/
 RUN docker-php-ext-install gd
 
+RUN composer clear-cache
+RUN composer install --no-cache
+
 RUN chmod -R 775 /var/www/html
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
-RUN composer install
+RUN cp .env.example .env
+
+# Entrypoint scriptini kopyala
+#COPY docker/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+#RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+#ENTRYPOINT ["sh", "/usr/local/bin/docker-entrypoint.sh"]
 
 # Expose port 8001 and start php-fpm server
 EXPOSE 8001
