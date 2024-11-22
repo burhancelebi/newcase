@@ -12,7 +12,7 @@ Postman dokümantasyonundan endpointleri direkt çalıştırabilirsiniz.
 
 ### Doküman Linki
 
-    https://documenter.getpostman.com/view/13527177/2sAYBSmDoh
+<a id='ssFeatures'>https://documenter.getpostman.com/view/13527177/2sAYBSmDoh </a>
 
 Bu üç komutu çalıştırdıktan sonra aşağıdaki endpointleriden test işlemleri gerçekleştirilebilir.
 
