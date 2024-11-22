@@ -14,7 +14,7 @@ Postman dokümantasyonundan endpointleri direkt çalıştırabilirsiniz.
 
 <a id='ssFeatures'>https://documenter.getpostman.com/view/13527177/2sAYBSmDoh </a>
 
-Bu üç komutu çalıştırdıktan sonra aşağıdaki endpointleriden test işlemleri gerçekleştirilebilir.
+Yukarıdaki komutlar çalıştırdıktan sonra aşağıdaki endpointleriden test işlemleri gerçekleştirilebilir.
 
 ### Orders - Sipariş işlemleri
 
