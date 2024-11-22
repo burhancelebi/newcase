@@ -6,6 +6,7 @@ use App\Models\User;
 use Faker\Generator;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
@@ -17,6 +18,8 @@ class UserSeeder extends Seeder
     {
         $file = file_get_contents(public_path('json/customers.json'));
         $users = json_decode($file);
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        User::query()->truncate();
 
         foreach ($users as $user)
         {

@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Product;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class ProductSeeder extends Seeder
 {
@@ -14,6 +15,8 @@ class ProductSeeder extends Seeder
     {
         $file = file_get_contents(public_path('json/products.json'));
         $products = json_decode($file);
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        Product::query()->truncate();
 
         foreach ($products as $product)
         {
