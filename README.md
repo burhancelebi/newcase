@@ -1,6 +1,6 @@
 ## Task Test Edilmesi
 
-Veritabanını kurduğumuzda aşağıdaki komutları sırasıyla çalıştırılması gerekmektedir.
+Aşağıdaki komutların sırasıyla çalıştırılması gerekmektedir.
 
     docker-compose up -d
     docker exec -it case sh
